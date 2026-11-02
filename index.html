@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071326">
+  <meta name="description" content="UA Alert Map — інтерактивна карта для ручної перевірки звукових сценаріїв тривоги України та мемний режим для регіонів Росії. Пошук міст, районів, областей, ракети, БпЛА й сирени.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dacukpavlo.github.io/">
+  <title>UA Alert Map — карта тривог України та Росії онлайн</title>
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="og:title" content="UA Alert Map — карта тривог України та Росії">
+  <meta property="og:description" content="Інтерактивний симулятор звукових тривог: оберіть Україну чи мемну карту Росії, знайдіть місто та спробуйте сценарії.">
+  <meta property="og:url" content="https://dacukpavlo.github.io/">
+  <meta name="google-adsense-account" content="ca-pub-8796543226124844">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8796543226124844" crossorigin="anonymous"></script>
+  <style>
+    :root{color-scheme:dark;--bg:#080f1d;--panel:#121f35;--stroke:#29415d;--text:#f1f7ff;--muted:#b5c8df;--blue:#529bff;--cyan:#6ccfff}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse 60% 38% at 60% 0%,#123f70 0%,transparent 72%),linear-gradient(135deg,#070f20,#0c1a2e 60%,#08101c);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:#9acbff}header{border-bottom:1px solid #263d58a8;background:#081425cc}header .inner{max-width:1120px;margin:auto;padding:17px 25px;display:flex;gap:22px;align-items:center;justify-content:space-between}
+    .brand{font-size:19px;font-weight:900;letter-spacing:.1em;color:white;text-decoration:none}.nav{display:flex;flex-wrap:wrap;align-items:center;gap:18px;font-size:14px}.nav a{text-decoration:none;color:#d6e9ff}
+    main{max-width:1120px;margin:auto;padding:35px 25px 64px}.hero{position:relative;overflow:hidden;border:1px solid #33537c;border-radius:30px;padding:65px clamp(25px,6vw,75px);background:radial-gradient(circle at 90% 20%,#1760a758,transparent 45%),linear-gradient(128deg,#112947,#0c1b2f 65%,#0d1828);box-shadow:0 24px 70px #0007}
+    .hero:after{content:"";position:absolute;pointer-events:none;right:-90px;top:-100px;width:340px;height:340px;border:2px solid #55b8ff33;border-radius:50%;box-shadow:0 0 0 58px #55b8ff11,0 0 0 116px #55b8ff08}
+    .tag{display:inline-block;background:#288bf01f;border:1px solid #529bff66;border-radius:40px;padding:5px 15px;color:#a8d7ff;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:800}
+    h1{max-width:760px;font-size:clamp(37px,7.5vw,76px);letter-spacing:-.055em;line-height:1.06;margin:24px 0 10px}h1 span{color:var(--cyan)}.lead{font-size:clamp(17px,2.4vw,22px);max-width:720px;color:#d7e9fa;margin:0 0 17px}.description{color:var(--muted);max-width:720px;margin:0 0 29px}
+    .btn{display:inline-block;background:linear-gradient(110deg,#298dff,#66b5ff);color:#05162d;text-decoration:none;font-weight:900;padding:15px 23px;border-radius:13px;box-shadow:0 8px 30px #2674d750}.btn:hover{filter:brightness(1.12)}.secondary{display:inline-block;margin:15px 0 0 18px;color:#cde7ff;text-underline-offset:4px}
+    h2{font-size:clamp(23px,3vw,31px);line-height:1.2;margin:0 0 17px}.section{margin-top:49px}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}.card{background:linear-gradient(135deg,#15243b,#101b2e);border:1px solid var(--stroke);border-radius:20px;padding:23px}.card b{display:block;font-size:19px;margin:12px 0 7px}.card p{color:var(--muted);margin:0}.symbol{font-size:30px}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:step}.step{background:#111d2f;border:1px solid #2a3d56;border-radius:18px;padding:20px}.step:before{counter-increment:step;content:counter(step);display:grid;place-items:center;height:34px;width:34px;background:#2769a9;border-radius:10px;font-weight:900;margin-bottom:10px}.step p{color:var(--muted);margin:4px 0 0}
+    .notice{margin-top:35px;border-left:4px solid #ffce74;background:#322a211c;border-radius:10px;padding:18px 20px;color:#f3d7ab}
+    .support{margin-top:45px;background:#11243b;border:1px solid #395980;border-radius:20px;padding:24px}.support p{color:var(--muted);margin:0 0 14px}.support a{font-weight:700}
+    footer{border-top:1px solid #253a53;background:#081321}footer .inner{max-width:1120px;margin:auto;padding:22px 25px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;color:#b7c9dd;font-size:14px}
+    @media(max-width:760px){.cards,.steps{grid-template-columns:1fr}.hero{padding:39px 22px;border-radius:22px}.hero:after{display:none}.secondary{display:block;margin-left:0}.nav{gap:10px}h1{letter-spacing:-.04em}}
+  </style>
+</head>
+<body>
+<header><div class="inner">
+  <a class="brand" href="/">◉ UA ALERT MAP</a>
+  <nav class="nav" aria-label="Головна навігація">
+    <a href="#features">Можливості</a>
+    <a href="#how">Як користуватися</a>
+    <a href="/ukraine-alert-simulator/">Відкрити карту ↗</a>
+  </nav>
+</div></header>
+<main>
+  <section class="hero">
+    <span class="tag">Україна та Росія · Інтерактивна карта</span>
+    <h1>UA <span>ALERT</span> MAP</h1>
+    <p class="lead">Карта тривог України та мемна карта регіонів Росії</p>
+    <p class="description">Знайдіть місто, село, район чи область, виберіть тип загрози та перевірте звуки сирен у браузері. Створюйте власні сценарії для демонстрації й відео.</p>
+    <a class="btn" href="/ukraine-alert-simulator/">🚨 Відкрити карту тривог</a>
+    <a class="secondary" href="https://map.ukrainealarm.com/" rel="noopener noreferrer" target="_blank">Офіційна карта реальних тривог України ↗</a>
+  </section>
+  <section class="section" id="features">
+    <h2>Що можна зробити на UA Alert Map?</h2>
+    <div class="cards">
+      <article class="card"><span class="symbol">🇺🇦</span><b>Карта України</b><p>Вибирайте населені пункти, райони та області України. Запускайте й вимикайте навчальні звукові сценарії вручну.</p></article>
+      <article class="card"><span class="symbol">🇷🇺</span><b>Мемна карта Росії</b><p>Шукайте Москву, Санкт-Петербург та інші міста й регіони. Увімкніть сатиричний сценарій із жартівливими українськими підписами.</p></article>
+      <article class="card"><span class="symbol">🔊</span><b>Звуки та типи загроз</b><p>Спробуйте повітряні, дронові, ракетні та інші умовні сповіщення, налаштуйте гучність і перевірте відбій.</p></article>
+    </div>
+  </section>
+  <section class="section" id="how">
+    <h2>Як користуватися картою?</h2>
+    <div class="steps">
+      <div class="step"><strong>Відкрийте карту</strong><p>Перейдіть на основний сайт і оберіть режим «Україна» або «Росія · меми».</p></div>
+      <div class="step"><strong>Знайдіть населений пункт</strong><p>Напишіть назву міста, села або району, потім виберіть масштаб на карті.</p></div>
+      <div class="step"><strong>Увімкніть сценарій</strong><p>Оберіть вид загрози, натисніть «Запустити», а для завершення — «Відбій».</p></div>
+    </div>
+  </section>
+  <div class="notice"><strong>Важливо:</strong> UA Alert Map — незалежний інтерактивний симулятор, а не державна система сповіщень. Власні й мемні тривоги на карті не повідомляють про реальну небезпеку. Для рішень щодо безпеки користуйтеся офіційними джерелами.</div>
+  <aside class="support" id="support">
+    <h2>💙 Підтримайте розвиток сайту</h2>
+    <p>Якщо карта вам сподобалася, ви можете підтримати нові можливості добровільним донатом або поділитися посиланням із друзями.</p>
+    <a href="https://send.monobank.ua/jar/UDq7YxNgo" target="_blank" rel="noopener noreferrer">Підтримати через Monobank ↗</a> · <a href="https://t.me/PavloDac1" target="_blank" rel="noopener noreferrer">Написати автору в Telegram ↗</a>
+  </aside>
+</main>
+<footer><div class="inner"><span>© 2026 UA Alert Map · Авторський вебпроєкт Павла Дячука</span><span><a href="/ukraine-alert-simulator/">Карта</a> · <a href="/privacy.html">Конфіденційність і реклама</a></span></div></footer>
+</body>
+</html>
